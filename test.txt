@@ -1,0 +1,109 @@
+Command	C	Java	Python
+Variable	type name« = initial_value»;	type name« = initial_value»;	name«: type» = initial_value
+Constant	enum{ name = value };	final type name = value;	nan
+Type synonym	typedef type synonym;	nan	synonym = type
+If	"if (condition) instructions
+«else instructions»
+instructions can be a single statement or a block in the form of: { statements }"	"if (condition) instructions
+«else instructions»
+instructions can be a single statement or a block in the form of: { statements }"	"if condition :
+Tab ? instructions
+«else:
+Tab ? instructions»"
+else if	"if (condition) instructions
+else if (condition) instructions
+...
+«else instructions»
+or
+
+if (condition) instructions
+else { if (condition) instructions }"	"if (condition) instructions
+else if (condition) instructions
+...
+«else instructions»
+or
+
+if (condition) instructions
+else { if (condition) instructions }"	"if condition :
+Tab ? instructions
+elif condition :
+Tab ? instructions
+...
+«else:
+Tab ? instructions»"
+select case	"switch (variable) {
+  case case1: instructions «; break;»
+  ...
+  «default: instructions»
+}"	"switch (variable) {
+  case case2: instructions «; break;»
+  ...
+  «default: instructions»
+}"	"match variable:
+Tab ? case case1:
+Tab ?Tab ? instructions
+Tab ? case case2:
+Tab ?Tab ? instructions"
+conditional expression	condition ? valueIfTrue : valueIfFalse	condition ? valueIfTrue : valueIfFalse	valueIfTrue if condition else valueIfFalse
+while	"instructions can be a single statement or a block in the form of: { statements }
+while (condition) instructions"	"instructions can be a single statement or a block in the form of: { statements }
+while (condition) instructions"	"while condition :
+Tab ? instructions
+«else:
+Tab ? instructions»"
+do while	do instructions while (condition);	do instructions while (condition);	Nan
+for i = first to last	for («type» i = first; i <= last; i++) instructions	for («type» i = first; i <= last; i++) instructions	"for i in range(first, last+1):
+Tab ? instructions
+«else:
+Tab ? instructions»"
+foreach	for (type item in set) instructions	for (type item in set) instructions	"for item in set:
+Tab ? instructions
+«else:
+Tab ? instructions»"
+throw	longjmp(state, exception);	throw exception;	raise exception
+handler	switch (setjmp(state)) { case 0: instructions break; case exception: instructions ... }	try { instructions } catch (exception) { instructions } ... «finally { instructions }»	"try:
+Tab ? instructions
+except «exception»:
+Tab ? instructions
+...
+«else:
+Tab ? instructions»
+«finally:
+Tab ? instructions»"
+assertion	assert(condition);	assert condition «: description»;	assert condition
+break/exit	break;	break «label»;	break
+continue	continue;	continue «label»;	continue
+label	label:	label:	nan
+goto	goto label;	nan	nan
+return	nan	yield value«;»	yield
+calling a function	foo(«parameters»)	foo(«parameters»)	foo(«parameters»)
+void function	void foo(«parameters») { instructions }	void foo(«parameters») { instructions }	"def foo(«parameters»):
+Tab ? instructions"
+return function	type foo(«parameters») { instructions ... return value; }	type foo(«parameters») { instructions ... return value; }	"def foo(«parameters»):
+Tab ? instructions
+Tab ? return value"
+main function	"«global declarations»
+int main(«int argc, char *argv[]») {
+instructions
+}"	"public static void main(String[] args) { instructions } or
+public static void main(String... args) { instructions }"	nan
+String to Integer	integer = [string intValue];	try { instructions } catch (exception) { instructions } ... «finally { instructions }»	integer = int(string)
+String to long integer	long = [string longLongValue];	long = Long.parseLong(string);	long = long(string)
+String to floats	float = [string doubleValue];	"float = Float.parseFloat(string);
+double = Double.parseDouble(string);"	float = float(string)
+Integer to string	string = [NSString stringWithFormat:@"%i", integer];	string = Integer.toString(integer); string = String.valueOf(integer);	string = str(float number)
+Floats to string	string = [NSString stringWithFormat:@"%f", float];	string = Float.toString(float); string = Double.toString(double);	string = str(number)
+stdin	"scanf(format, &x); or
+fscanf(stdin, format, &x);"	"x = System.in.read(); or
+x = new Scanner(System.in).nextInt(); or
+x = new Scanner(System.in).nextLine();"	x = input(«prompt»)
+stdout	"printf( format, x); or
+fprintf(stdout, format, x); "	"System.out.print(x); or
+System.out.printf(format, x); or
+System.out.println(x);"	print(x«, end=""»)
+stderr	fprintf(stderr, format, x );	"System.err.print(x); or
+System.err.printf(format, x); or
+System.err.println(x);"	print(x«, end=""», file=sys.stderr)
+Argument values	argv[n]	args[n]	sys.argv[n]
+Argument counts	argc	args.length	len(sys.argv)
+Program name	first argument	nan	first argument

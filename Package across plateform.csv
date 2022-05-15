@@ -1,0 +1,5 @@
+Package,Python 2,Python 3
+django,19.96%,78.84%
+flask,17.75%,81.76%
+pandas,23.34%,76.01%
+requests,39.38%,59.92%

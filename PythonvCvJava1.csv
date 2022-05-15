@@ -1,0 +1,4 @@
+Language,Use Case Purpose,Imperative,Object oriented,Functional,Procedural,Other Paradigms,Standardized,Standardizations
+C,"Application, system, general purpose, low-level operations",TRUE,FALSE,FALSE,TRUE,Nan,TRUE,"1998, ISO/IEC 2003, ISO/IEC 2011,ISO/IEC 2014,ISO/IEC 2017"
+Java,"Application, business, client-side, general, mobile development, server-side, web",TRUE,TRUE,TRUE,TRUE,Concurrent,TRUE,De facto standard via Java Language Specification
+Python,"Application, general, web, scripting, artificial intelligence, scientific computing",TRUE,TRUE,TRUE,TRUE,Aspect-oriented,TRUE,De facto standard via Python Enhancement Proposals (PEPs)
